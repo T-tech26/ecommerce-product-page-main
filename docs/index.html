@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Frontend Mentor | E-commerce product page</title>
+  </head>
+  <body
+    class="mx-auto h-screen min-h-screen w-full max-w-screen-2xl bg-White font-body flex flex-col justify-evenly"
+  >
+    <header class="flex h-auto w-full items-center px-6 pb-5 md:px-16 lg:px-28">
+      <nav
+        class="flex h-auto w-full items-center justify-between border-b-[1px] border-solid border-gray-300"
+      >
+        <div class="flex w-1/2 items-center justify-between">
+          <img
+            src="../images/icon-menu.svg"
+            alt="menu-icon"
+            class="mr-5 md:hidden"
+          />
+
+          <img src="../images/logo.svg" alt="logo" class="mr-5 w-28 lg:w-40" />
+          <ul class="item-center invisible flex md:visible">
+            <li
+              class="cursor-pointer py-7 text-sm tracking-wide text-Dark-grayish-blue hover:border-b-2 hover:border-Orange hover:text-Very-dark-blue active:border-Orange md:px-2 lg:px-4"
+            >
+              Collections
+            </li>
+            <li
+              class="cursor-pointer py-7 text-sm tracking-wide text-Dark-grayish-blue hover:border-b-2 hover:border-Orange hover:text-Very-dark-blue active:border-Orange md:px-2 lg:px-4"
+            >
+              Men
+            </li>
+            <li
+              class="cursor-pointer py-7 text-sm tracking-wide text-Dark-grayish-blue hover:border-b-2 hover:border-Orange hover:text-Very-dark-blue active:border-Orange md:px-2 lg:px-4"
+            >
+              Women
+            </li>
+            <li
+              class="cursor-pointer py-7 text-sm tracking-wide text-Dark-grayish-blue hover:border-b-2 hover:border-Orange hover:text-Very-dark-blue active:border-Orange md:px-2 lg:px-4"
+            >
+              About
+            </li>
+            <li
+              class="cursor-pointer py-7 text-sm tracking-wide text-Dark-grayish-blue hover:border-b-2 hover:border-Orange hover:text-Very-dark-blue active:border-Orange md:px-2 lg:px-4"
+            >
+              Contact
+            </li>
+          </ul>
+        </div>
+
+        <div class="relative flex w-20 items-center justify-between lg:w-32">
+          <div
+            class="relative h-auto w-auto after:absolute after:right-[-5px] after:top-[-5px] after:z-20 after:block after:rounded after:bg-Orange after:px-1 after:py-0 after:text-[.5rem] after:text-White after:content-['']"
+          >
+            <img
+              src="../images/icon-cart.svg"
+              alt="cart"
+              class="z-10 cursor-pointer"
+            />
+          </div>
+
+          <div
+            class="absolute right-0 top-14 h-auto w-80 hidden rounded-lg bg-White shadow-2xl"
+          >
+            <h3
+              class="border-b border-Grayish-blue px-5 py-5 text-sm font-[700] text-Very-dark-blue"
+            >
+              Cart
+            </h3>
+            <p
+              class="py-16 text-center text-sm font-[700] text-Dark-grayish-blue"
+            >
+              Your cart is empty.
+            </p>
+
+            <div class="hidden px-5 py-5">
+              <div class="flex items-center justify-evenly">
+                <img
+                  src="../images/image-product-1-thumbnail.jpg"
+                  alt="product-1-thumbnail"
+                  class="w-10 rounded-sm"
+                />
+
+                <div class="h-auto w-4/5 px-2">
+                  <h4 class="text-sm font-[400] text-Dark-grayish-blue">
+                    Fall Limited Edition Sneakers
+                  </h4>
+                  <p class="text-sm font-[400] text-Dark-grayish-blue">
+                    $125.00 x 3
+                    <strong class="text-sm font-[700] text-Very-dark-blue"
+                      >$375.00</strong
+                    >
+                  </p>
+                </div>
+
+                <img
+                  src="../images/icon-delete.svg"
+                  alt="delete-icon"
+                  class="cursor-pointer"
+                />
+              </div>
+
+              <button
+                class="mt-5 h-10 w-full rounded-md bg-Orange text-center text-xs font-[700] text-White hover:opacity-50 active:opacity-50"
+              >
+                Checkout
+              </button>
+            </div>
+          </div>
+
+          <img
+            src="../images/image-avatar.png"
+            alt="user-profile"
+            class="w-10 cursor-pointer rounded-[50%] border-[2px] hover:border-Orange active:border-Orange lg:w-12"
+          />
+        </div>
+      </nav>
+    </header>
+
+    <main class="flex h-auto w-full items-center justify-between lg:px-28">
+      <section
+        class="flex h-auto w-1/2 flex-col items-center justify-center"
+      >
+        <div class="mb-10 flex h-auto lg:w-[400px] w-[200px] md:w-[300px] items-center justify-center">
+          <img
+            src="../images/image-product-1.jpg"
+            alt="image-product-1"
+            class="lg:w-[400px] rounded-3xl w-[200px] md:w-[300px]"
+          />
+        </div>
+
+        <div class="flex h-auto lg:w-[400px] w-[200px] md:w-[300px] items-center justify-between">
+          <img
+            src="../images/image-product-1-thumbnail.jpg"
+            alt="product-1-thumbnail"
+            class="active:opcity-70 z-10 max-w-[20%] cursor-pointer rounded-xl hover:opacity-70"
+          />
+
+          <img
+            src="../images/image-product-2-thumbnail.jpg"
+            alt="product-2-thumbnail"
+            class="z-10 max-w-[20%] cursor-pointer rounded-xl hover:opacity-70 active:opacity-70"
+          />
+
+          <img
+            src="../images/image-product-3-thumbnail.jpg"
+            alt="product-3-thumbnail"
+            class="z-10 max-w-[20%] cursor-pointer rounded-xl hover:opacity-70 active:opacity-70"
+          />
+
+          <img
+            src="../images/image-product-4-thumbnail.jpg"
+            alt="product-4-thumbnail"
+            class="z-10 max-w-[20%] cursor-pointer rounded-xl hover:opacity-70 active:opacity-70"
+          />
+        </div>
+      </section>
+
+      <section class="h-full w-1/2 pr-10 lg:px-10 py-12">
+        <div class="flex h-full w-full flex-col justify-center lg:pr-10">
+          <h1 class="text-sm font-[700] uppercase tracking-wider text-Orange">
+            Sneaker Company
+          </h1>
+
+          <h2
+            class="md:mb-7 md:mt-5 text-xl md:text-4xl font-[700] tracking-wide text-Very-dark-blue leading-5"
+          >
+            Fall Limited Edition Sneakers
+          </h2>
+
+          <p
+            class="md:mb-5 text-sm font-[400] tracking-wide text-Dark-grayish-blue"
+          >
+            These low-profile sneakers are your perfect casual wear companion.
+            Featuring a durable rubber outer sole, they’ll withstand everything
+            the weather can offer.
+          </p>
+
+          <p class="md:mb-1 flex w-36 items-center justify-between">
+            <strong
+              class="text-lg md:text-2xl font-[700] tracking-wide text-Very-dark-blue"
+              >$125.00</strong
+            >
+            <span
+              class="rounded-lg bg-Pale-orange px-2 py-1 text-sm font-[700] text-Orange"
+              >50%</span
+            >
+          </p>
+          <p class="text-xs font-[700] text-Grayish-blue">$250.00</p>
+
+          <div class="mt-4 md:mt-8 flex items-center justify-between">
+            <div class="flex h-auto w-full items-center justify-between px-3">
+              <svg
+                width="12"
+                height="4"
+                class="cursor-pointer hover:opacity-50 active:opacity-50"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+              >
+                <defs>
+                  <path
+                    d="M11.357 3.332A.641.641 0 0 0 12 2.69V.643A.641.641 0 0 0 11.357 0H.643A.641.641 0 0 0 0 .643v2.046c0 .357.287.643.643.643h10.714Z"
+                    id="a"
+                  />
+                </defs>
+                <use fill="#FF7E1B" fill-rule="nonzero" xlink:href="#a" />
+              </svg>
+
+              <span class="text-sm font-[700] text-Very-dark-blue">0</span>
+
+              <svg
+                width="12"
+                height="12"
+                class="cursor-pointer hover:opacity-50 active:opacity-50"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+              >
+                <defs>
+                  <path
+                    d="M12 7.023V4.977a.641.641 0 0 0-.643-.643h-3.69V.643A.641.641 0 0 0 7.022 0H4.977a.641.641 0 0 0-.643.643v3.69H.643A.641.641 0 0 0 0 4.978v2.046c0 .356.287.643.643.643h3.69v3.691c0 .356.288.643.644.643h2.046a.641.641 0 0 0 .643-.643v-3.69h3.691A.641.641 0 0 0 12 7.022Z"
+                    id="b"
+                  />
+                </defs>
+                <use fill="#FF7E1B" fill-rule="nonzero" xlink:href="#b" />
+              </svg>
+            </div>
+
+            <button
+              class="flex w-44 items-center justify-evenly rounded-lg bg-Orange px-3 py-2 md:px-5 md:py-4 text-xs font-[700] tracking-wide text-White hover:opacity-50 active:opacity-50"
+            >
+              <svg width="22" height="20" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M20.925 3.641H3.863L3.61.816A.896.896 0 0 0 2.717 0H.897a.896.896 0 1 0 0 1.792h1l1.031 11.483c.073.828.52 1.726 1.291 2.336C2.83 17.385 4.099 20 6.359 20c1.875 0 3.197-1.87 2.554-3.642h4.905c-.642 1.77.677 3.642 2.555 3.642a2.72 2.72 0 0 0 2.717-2.717 2.72 2.72 0 0 0-2.717-2.717H6.365c-.681 0-1.274-.41-1.53-1.009l14.321-.842a.896.896 0 0 0 .817-.677l1.821-7.283a.897.897 0 0 0-.87-1.114ZM6.358 18.208a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm10.015 0a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm2.021-7.243-13.8.81-.57-6.341h15.753l-1.383 5.53Z"
+                  fill="#fff"
+                  fill-rule="nonzero"
+                />
+              </svg>
+              Add to cart
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="py-5 text-center text-xs">
+      Challenge by
+      <a
+        href="https://www.frontendmentor.io?ref=challenge"
+        target="_blank"
+        class="text-A"
+        >Frontend Mentor</a
+      >. Coded by <a href="#" class="text-A">Tari Doutua</a>.
+    </footer>
+
+    <section
+      class="invisible fixed left-0 top-0 z-30 grid h-screen w-full place-content-center bg-Black"
+    >
+      <div
+        class="relative flex h-auto w-[400px] flex-col items-center justify-between py-10"
+      >
+        <img
+          src="../images/image-product-1.jpg"
+          alt="image-product-1"
+          class="rounded-2xl"
+        />
+
+        <svg
+          width="14"
+          height="15"
+          class="absolute right-0 top-0 cursor-pointer"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="m11.596.782 2.122 2.122L9.12 7.499l4.597 4.597-2.122 2.122L7 9.62l-4.595 4.597-2.122-2.122L4.878 7.5.282 2.904 2.404.782l4.595 4.596L11.596.782Z"
+            fill="#fff"
+            fill-rule="evenodd"
+          />
+        </svg>
+
+        <div
+          class="absolute left-[-25px] top-[40%] grid h-12 w-12 cursor-pointer place-content-center rounded-[50%] bg-White p-3"
+        >
+          <img src="../images/icon-previous.svg" alt="previous-icon" />
+        </div>
+
+        <div
+          class="absolute right-[-25px] top-[40%] grid h-12 w-12 cursor-pointer place-content-center rounded-[50%] bg-White p-3"
+        >
+          <img src="../images/icon-next.svg" alt="next-icon" />
+        </div>
+
+        <div class="mt-4 flex h-auto w-[400px] items-center justify-evenly">
+          <img
+            src="../images/image-product-1-thumbnail.jpg"
+            alt="product-1-thumbnail"
+            class="active:opcity-60 z-10 w-16 cursor-pointer rounded-xl hover:opacity-60"
+          />
+          <img
+            src="../images/image-product-2-thumbnail.jpg"
+            alt="product-2-thumbnail"
+            class="active:opcity-60 z-10 w-16 cursor-pointer rounded-xl hover:opacity-60"
+          />
+          <img
+            src="../images/image-product-3-thumbnail.jpg"
+            alt="product-3-thumbnail"
+            class="active:opcity-60 z-10 w-16 cursor-pointer rounded-xl hover:opacity-60"
+          />
+          <img
+            src="../images/image-product-4-thumbnail.jpg"
+            alt="product-4-thumbnail"
+            class="active:opcity-60 z-10 w-16 cursor-pointer rounded-xl hover:opacity-60"
+          />
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
