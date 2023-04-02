@@ -68,5 +68,5 @@ I think I will continue development in these aspects and more, I don't just reme
 ## Author
 
 - Frontend Mentor - [@T-tech26](https://www.frontendmentor.io/profile/yourusername)
-- LinkedIn - [@tariladei-doutua](https://www.your-site.com)
-- Twitter - [@TariDoutua](https://www.twitter.com/TariDoutua)
+- LinkedIn - [@tariladei-doutua](https://www.linkedin.com/posts/tariladei-doutua-109059226_frontend-mentor-ecommerce-product-page-activity-7048159518219722752-WqYE?utm_source=share&utm_medium=member_desktop)
+- Twitter - [@TariDoutua](https://twitter.com/TariDoutua/status/1642392256110895106)
