@@ -60,19 +60,19 @@ let itemNumber = 0;
 const productImages = [
   {
     alt: 'image-product-1',
-    src: '../images/image-product-1.jpg'
+    src: './images/image-product-1.jpg'
   },
   {
     alt: 'image-product-2',
-    src: '../images/image-product-2.jpg'
+    src: './images/image-product-2.jpg'
   },
   {
     alt: 'image-product-3',
-    src: '../images/image-product-3.jpg'
+    src: './images/image-product-3.jpg'
   },
   {
     alt: 'image-product-4',
-    src: '../images/image-product-4.jpg'
+    src: './images/image-product-4.jpg'
   },
 ];
 
