@@ -22,21 +22,21 @@
     <title>Frontend Mentor | E-commerce product page</title>
   </head>
   <body
-    class="mx-auto h-screen min-h-screen w-full max-w-screen-2xl bg-White font-body flex flex-col justify-evenly"
+    class="mx-auto h-screen min-h-screen w-full max-w-screen-2xl bg-White font-body flex flex-col justify-between select-none"
   >
-    <header class="flex h-auto w-full items-center px-6 pb-5 md:px-16 lg:px-28">
+    <header class="flex h-auto w-full items-center px-6 sm:pb-5 md:px-16 lg:px-28">
       <nav
-        class="flex h-auto w-full items-center justify-between border-b-[1px] border-solid border-gray-300"
+        class="flex h-auto w-full items-center justify-between border-b-[1px] border-solid border-gray-300 py-3 md:py-0"
       >
-        <div class="flex w-1/2 items-center justify-between">
+        <div class="flex w-1/2 items-center justify-start md:justify-between">
           <img
             src="../images/icon-menu.svg"
             alt="menu-icon"
-            class="mr-5 md:hidden"
+            class="mr-5 md:hidden nav-icon cursor-pointer"
           />
 
           <img src="../images/logo.svg" alt="logo" class="mr-5 w-28 lg:w-40" />
-          <ul class="item-center invisible flex md:visible">
+          <ul class="item-center md:flex hidden">
             <li
               class="cursor-pointer py-7 text-sm tracking-wide text-Dark-grayish-blue hover:border-b-2 hover:border-Orange hover:text-Very-dark-blue active:border-Orange md:px-2 lg:px-4"
             >
@@ -67,17 +67,18 @@
 
         <div class="relative flex w-20 items-center justify-between lg:w-32">
           <div
-            class="relative h-auto w-auto after:absolute after:right-[-5px] after:top-[-5px] after:z-20 after:block after:rounded after:bg-Orange after:px-1 after:py-0 after:text-[.5rem] after:text-White after:content-['']"
+            class="relative h-auto w-auto"
           >
             <img
               src="../images/icon-cart.svg"
               alt="cart"
-              class="z-10 cursor-pointer"
+              class="z-10 cursor-pointer cart-icon"
             />
+            <span class="absolute right-[-5px] top-[-5px] z-20 block rounded bg-Orange px-1 py-0 text-[.5rem] text-White cart-icon-container"></span>
           </div>
 
           <div
-            class="absolute right-0 top-14 h-auto w-80 hidden rounded-lg bg-White shadow-2xl"
+            class="absolute right-0 top-14 h-auto w-72 sm:w-80 rounded-lg bg-White shadow-2xl hidden cart"
           >
             <h3
               class="border-b border-Grayish-blue px-5 py-5 text-sm font-[700] text-Very-dark-blue"
@@ -85,40 +86,38 @@
               Cart
             </h3>
             <p
-              class="py-16 text-center text-sm font-[700] text-Dark-grayish-blue"
+              class="py-16 text-center text-sm font-[700] text-Dark-grayish-blue cart-empty"
             >
               Your cart is empty.
             </p>
 
-            <div class="hidden px-5 py-5">
+            <div class=" px-5 py-5 hidden item-container">
               <div class="flex items-center justify-evenly">
                 <img
-                  src="../images/image-product-1-thumbnail.jpg"
                   alt="product-1-thumbnail"
-                  class="w-10 rounded-sm"
+                  class="w-10 rounded-sm cart-item-image"
                 />
 
                 <div class="h-auto w-4/5 px-2">
-                  <h4 class="text-sm font-[400] text-Dark-grayish-blue">
-                    Fall Limited Edition Sneakers
+                  <h4 class="text-sm font-[400] text-Dark-grayish-blue cart-item-title">   
                   </h4>
-                  <p class="text-sm font-[400] text-Dark-grayish-blue">
-                    $125.00 x 3
-                    <strong class="text-sm font-[700] text-Very-dark-blue"
-                      >$375.00</strong
-                    >
-                  </p>
+                  
+                  <div class="flex w-full">
+                    <p class="text-sm font-[400] text-Dark-grayish-blue mr-5 cart-item-price">
+                    </p>
+                    <strong class="text-sm font-[700] text-Very-dark-blue cart-item-total-price"></strong>
+                  </div>
                 </div>
 
                 <img
                   src="../images/icon-delete.svg"
                   alt="delete-icon"
-                  class="cursor-pointer"
+                  class="cursor-pointer delete-icon"
                 />
               </div>
 
               <button
-                class="mt-5 h-10 w-full rounded-md bg-Orange text-center text-xs font-[700] text-White hover:opacity-50 active:opacity-50"
+                class="mt-5 h-10 w-full rounded-md bg-Orange text-center text-xs font-[700] text-White hover:opacity-50 active:opacity-50 delete-item-icon"
               >
                 Checkout
               </button>
@@ -134,53 +133,78 @@
       </nav>
     </header>
 
-    <main class="flex h-auto w-full items-center justify-between lg:px-28">
+    <main class="flex h-auto w-full flex-col sm:flex-row items-center justify-between lg:px-28">
       <section
-        class="flex h-auto w-1/2 flex-col items-center justify-center"
+        class="flex h-auto w-full sm:w-1/2 flex-col items-center justify-center sm:px-10"
       >
-        <div class="mb-10 flex h-auto lg:w-[400px] w-[200px] md:w-[300px] items-center justify-center">
+        <div class="sm:mb-10 flex flex-col h-auto w-full lg:w-[400px] sm:w-[200px] md:w-[300px] items-center justify-center relative">
           <img
             src="../images/image-product-1.jpg"
             alt="image-product-1"
-            class="lg:w-[400px] rounded-3xl w-[200px] md:w-[300px]"
+            class="lg:w-[400px] sm:rounded-3xl w-full sm:w-[200px] md:w-[300px] cursor-pointer main-page-product-image"
           />
+
+          <div
+            class="absolute left-[5%] top-[40%] grid h-10 w-10 cursor-pointer place-content-center rounded-[50%] bg-White p-3 sm:hidden previous-btn"
+          >
+            <img src="../images/icon-previous.svg" alt="previous-icon"/>
+          </div>
+
+          <div
+            class="absolute right-[5%] top-[40%] grid h-10 w-10 cursor-pointer place-content-center rounded-[50%] bg-White p-3 sm:hidden next-btn"
+          >
+            <img src="../images/icon-next.svg" alt="next-icon" />
+          </div>
+
         </div>
 
-        <div class="flex h-auto lg:w-[400px] w-[200px] md:w-[300px] items-center justify-between">
-          <img
-            src="../images/image-product-1-thumbnail.jpg"
-            alt="product-1-thumbnail"
-            class="active:opcity-70 z-10 max-w-[20%] cursor-pointer rounded-xl hover:opacity-70"
-          />
+        <div class="sm:flex h-auto lg:w-[400px] sm:w-[200px] md:w-[300px] items-center justify-between hidden">
+          <div class="max-w-[20%] relative main">
+            <img
+              src="../images/image-product-1-thumbnail.jpg"
+              alt="product-1-thumbnail"
+              class="active:opacity-70 z-10 w-full cursor-pointer rounded-xl hover:opacity-70 thumbnail"
+            />
+            <div class="absolute w-full h-full bg-White top-0 left-0 opacity-50 border-2 border-Orange rounded-xl active"></div>
+          </div>
 
-          <img
-            src="../images/image-product-2-thumbnail.jpg"
-            alt="product-2-thumbnail"
-            class="z-10 max-w-[20%] cursor-pointer rounded-xl hover:opacity-70 active:opacity-70"
-          />
+          <div class="max-w-[20%] relative">
+            <img
+              src="../images/image-product-2-thumbnail.jpg"
+              alt="product-2-thumbnail"
+              class="z-10 w-full cursor-pointer rounded-xl hover:opacity-70 active:opacity-70 thumbnail"
+            />
+            <div class="absolute w-full h-full bg-White top-0 left-0 opacity-50 border-2 border-Orange rounded-xl hidden active"></div>
+          </div>
 
-          <img
-            src="../images/image-product-3-thumbnail.jpg"
-            alt="product-3-thumbnail"
-            class="z-10 max-w-[20%] cursor-pointer rounded-xl hover:opacity-70 active:opacity-70"
-          />
+          <div class="max-w-[20%] relative">
+            <img
+              src="../images/image-product-3-thumbnail.jpg"
+              alt="product-3-thumbnail"
+              class="z-10 w-full cursor-pointer rounded-xl hover:opacity-70 active:opacity-70 thumbnail"
+            />
+            <div class="absolute w-full h-full bg-White top-0 left-0 opacity-50 border-2 border-Orange rounded-xl hidden active"></div>
+          </div>
 
-          <img
-            src="../images/image-product-4-thumbnail.jpg"
-            alt="product-4-thumbnail"
-            class="z-10 max-w-[20%] cursor-pointer rounded-xl hover:opacity-70 active:opacity-70"
-          />
+          <div class="max-w-[20%] relative">
+            <img
+              src="../images/image-product-4-thumbnail.jpg"
+              alt="product-4-thumbnail"
+              class="z-10 w-full cursor-pointer rounded-xl hover:opacity-70 active:opacity-70 thumbnail"
+            />
+            <div class="absolute w-full h-full bg-White top-0 left-0 opacity-50 border-2 border-Orange rounded-xl hidden active"></div>
+          </div>
         </div>
       </section>
 
-      <section class="h-full w-1/2 pr-10 lg:px-10 py-12">
-        <div class="flex h-full w-full flex-col justify-center lg:pr-10">
+      <section class="h-full w-4/5 sm:mb-0 sm:w-1/2 sm:pr-10 lg:px-10 py-12">
+        <div class="flex h-full w-full flex-col justify-center md:pr-10">
           <h1 class="text-sm font-[700] uppercase tracking-wider text-Orange">
             Sneaker Company
           </h1>
 
           <h2
-            class="md:mb-7 md:mt-5 text-xl md:text-4xl font-[700] tracking-wide text-Very-dark-blue leading-5"
+            class="md:mb-7 md:mt-5 text-xl md:text-4xl font-[700] tracking-wide text-Very-dark-blue leading-6 mb-3 mt-2 item-title"
           >
             Fall Limited Edition Sneakers
           </h2>
@@ -193,24 +217,26 @@
             the weather can offer.
           </p>
 
-          <p class="md:mb-1 flex w-36 items-center justify-between">
-            <strong
-              class="text-lg md:text-2xl font-[700] tracking-wide text-Very-dark-blue"
-              >$125.00</strong
-            >
-            <span
-              class="rounded-lg bg-Pale-orange px-2 py-1 text-sm font-[700] text-Orange"
-              >50%</span
-            >
-          </p>
-          <p class="text-xs font-[700] text-Grayish-blue">$250.00</p>
+          <div class="flex sm:flex-col items-center sm:items-start mt-3 sm:mt-1 justify-between w-full h-auto">
+            <p class="md:mb-1 flex w-36 items-center justify-between">
+              <strong
+                class="text-lg md:text-2xl font-[700] tracking-wide text-Very-dark-blue item-price"
+                >$125.00</strong
+              >
+              <span
+                class="rounded-lg bg-Pale-orange px-2 py-1 text-sm font-[700] text-Orange"
+                >50%</span
+              >
+            </p>
+            <p class="text-xs font-[700] text-Grayish-blue">$250.00</p>
+          </div>
 
-          <div class="mt-4 md:mt-8 flex items-center justify-between">
-            <div class="flex h-auto w-full items-center justify-between px-3">
+          <div class="mt-8 sm:mt-2 md:mt-8 flex flex-col sm:flex-row items-center justify-between">
+            <div class="flex h-auto w-full sm:w-1/2 items-center justify-between px-5 sm:px-0 sm:pr-12 mb-7 sm:mb-0">
               <svg
                 width="12"
                 height="4"
-                class="cursor-pointer hover:opacity-50 active:opacity-50"
+                class="cursor-pointer hover:opacity-50 active:opacity-50 minus-btn"
                 xmlns="http://www.w3.org/2000/svg"
                 xmlns:xlink="http://www.w3.org/1999/xlink"
               >
@@ -223,12 +249,12 @@
                 <use fill="#FF7E1B" fill-rule="nonzero" xlink:href="#a" />
               </svg>
 
-              <span class="text-sm font-[700] text-Very-dark-blue">0</span>
+              <span class="text-sm font-[700] text-Very-dark-blue number-of-item">0</span>
 
               <svg
                 width="12"
                 height="12"
-                class="cursor-pointer hover:opacity-50 active:opacity-50"
+                class="cursor-pointer hover:opacity-50 active:opacity-50 add-btn"
                 xmlns="http://www.w3.org/2000/svg"
                 xmlns:xlink="http://www.w3.org/1999/xlink"
               >
@@ -243,9 +269,9 @@
             </div>
 
             <button
-              class="flex w-44 items-center justify-evenly rounded-lg bg-Orange px-3 py-2 md:px-5 md:py-4 text-xs font-[700] tracking-wide text-White hover:opacity-50 active:opacity-50"
+              class="flex w-full sm:w-1/2 items-center justify-center rounded-lg bg-Orange px-3 py-2 md:px-5 md:py-4 text-xs font-[700] tracking-wide text-White hover:opacity-50 active:opacity-50 add-item-btn"
             >
-              <svg width="22" height="20" xmlns="http://www.w3.org/2000/svg">
+              <svg width="22" height="20" class="mr-2" xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M20.925 3.641H3.863L3.61.816A.896.896 0 0 0 2.717 0H.897a.896.896 0 1 0 0 1.792h1l1.031 11.483c.073.828.52 1.726 1.291 2.336C2.83 17.385 4.099 20 6.359 20c1.875 0 3.197-1.87 2.554-3.642h4.905c-.642 1.77.677 3.642 2.555 3.642a2.72 2.72 0 0 0 2.717-2.717 2.72 2.72 0 0 0-2.717-2.717H6.365c-.681 0-1.274-.41-1.53-1.009l14.321-.842a.896.896 0 0 0 .817-.677l1.821-7.283a.897.897 0 0 0-.87-1.114ZM6.358 18.208a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm10.015 0a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm2.021-7.243-13.8.81-.57-6.341h15.753l-1.383 5.53Z"
                   fill="#fff"
@@ -270,65 +296,101 @@
     </footer>
 
     <section
-      class="invisible fixed left-0 top-0 z-30 grid h-screen w-full place-content-center bg-Black"
+      class="invisible fixed left-0 top-0 z-30 grid h-screen w-full place-content-center bg-Black light-box"
     >
       <div
-        class="relative flex h-auto w-[400px] flex-col items-center justify-between py-10"
+        class="relative flex h-auto w-[250px] sm:w-[400px] flex-col items-center justify-between py-10"
       >
         <img
           src="../images/image-product-1.jpg"
           alt="image-product-1"
-          class="rounded-2xl"
+          class="rounded-2xl lightBox-box-product-image"
         />
 
         <svg
           width="14"
           height="15"
-          class="absolute right-0 top-0 cursor-pointer"
+          class="absolute right-0 top-0 cursor-pointer light-box-close-icon"
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
             d="m11.596.782 2.122 2.122L9.12 7.499l4.597 4.597-2.122 2.122L7 9.62l-4.595 4.597-2.122-2.122L4.878 7.5.282 2.904 2.404.782l4.595 4.596L11.596.782Z"
             fill="#fff"
+            class="hover:fill-Orange"
             fill-rule="evenodd"
           />
         </svg>
 
         <div
-          class="absolute left-[-25px] top-[40%] grid h-12 w-12 cursor-pointer place-content-center rounded-[50%] bg-White p-3"
+          class="absolute left-[-25px] top-[40%] grid h-12 w-12 cursor-pointer place-content-center rounded-[50%] bg-White p-3 previous-btn"
         >
           <img src="../images/icon-previous.svg" alt="previous-icon" />
         </div>
 
         <div
-          class="absolute right-[-25px] top-[40%] grid h-12 w-12 cursor-pointer place-content-center rounded-[50%] bg-White p-3"
+          class="absolute right-[-25px] top-[40%] grid h-12 w-12 cursor-pointer place-content-center rounded-[50%] bg-White p-3 next-btn"
         >
           <img src="../images/icon-next.svg" alt="next-icon" />
         </div>
 
-        <div class="mt-4 flex h-auto w-[400px] items-center justify-evenly">
-          <img
-            src="../images/image-product-1-thumbnail.jpg"
-            alt="product-1-thumbnail"
-            class="active:opcity-60 z-10 w-16 cursor-pointer rounded-xl hover:opacity-60"
-          />
-          <img
-            src="../images/image-product-2-thumbnail.jpg"
-            alt="product-2-thumbnail"
-            class="active:opcity-60 z-10 w-16 cursor-pointer rounded-xl hover:opacity-60"
-          />
-          <img
-            src="../images/image-product-3-thumbnail.jpg"
-            alt="product-3-thumbnail"
-            class="active:opcity-60 z-10 w-16 cursor-pointer rounded-xl hover:opacity-60"
-          />
-          <img
-            src="../images/image-product-4-thumbnail.jpg"
-            alt="product-4-thumbnail"
-            class="active:opcity-60 z-10 w-16 cursor-pointer rounded-xl hover:opacity-60"
-          />
+        <div class="mt-4 flex h-auto w-[250px] sm:w-[400px] items-center justify-evenly">
+          <div class="max-w-[20%] relative">
+            <img
+              src="../images/image-product-1-thumbnail.jpg"
+              alt="product-1-thumbnail"
+              class="active:opacity-70 z-10 w-full cursor-pointer rounded-xl hover:opacity-70 thumbnail"
+            />
+            <div class="absolute w-full h-full bg-White top-0 left-0 opacity-50 border-2 border-Orange rounded-xl active2"></div>
+          </div>
+
+          <div class="max-w-[20%] relative">
+            <img
+              src="../images/image-product-2-thumbnail.jpg"
+              alt="product-2-thumbnail"
+              class="z-10 w-full cursor-pointer rounded-xl hover:opacity-70 active:opacity-70 thumbnail"
+            />
+            <div class="absolute w-full h-full bg-White top-0 left-0 opacity-50 border-2 border-Orange rounded-xl hidden active2"></div>
+          </div>
+
+          <div class="max-w-[20%] relative">
+            <img
+              src="../images/image-product-3-thumbnail.jpg"
+              alt="product-3-thumbnail"
+              class="z-10 w-full cursor-pointer rounded-xl hover:opacity-70 active:opacity-70 thumbnail"
+            />
+            <div class="absolute w-full h-full bg-White top-0 left-0 opacity-50 border-2 border-Orange rounded-xl hidden active2"></div>
+          </div>
+
+          <div class="max-w-[20%] relative">
+            <img
+              src="../images/image-product-4-thumbnail.jpg"
+              alt="product-4-thumbnail"
+              class="z-10 w-full cursor-pointer rounded-xl hover:opacity-70 active:opacity-70 thumbnail"
+            />
+            <div class="absolute w-full h-full bg-White top-0 left-0 opacity-50 border-2 border-Orange rounded-xl hidden active2"></div>
+          </div>
         </div>
       </div>
     </section>
+
+    <section class="w-full h-screen fixed top-0 left-0 bg-Black hidden nav-container">
+      <div class="w-3/5 sm:w-1/2 h-screen bg-white pt-7 pb-10 pr-10 pl-1 absolute left-[-80%] top-0 nav-menu">
+        <div class="w-full h-20 pl-10">
+          <img src="../images/icon-close.svg" alt="menu-close-icon" class="cursor-pointer nav-close-icon">
+        </div>
+
+        <div class="w-full h-auto">
+          <ul>
+            <li class="leading-9 text-sm text-Very-dark-blue font-[700] tracking-wide pl-10 cursor-pointer hover:border-l-2 hover:border-Orange active:border-l-2 active:border-Orange">Collections</li>
+            <li class="leading-9 text-sm text-Very-dark-blue font-[700] tracking-wide pl-10 cursor-pointer hover:border-l-2 hover:border-Orange active:border-l-2 active:border-Orange">Men</li>
+            <li class="leading-9 text-sm text-Very-dark-blue font-[700] tracking-wide pl-10 cursor-pointer hover:border-l-2 hover:border-Orange active:border-l-2 active:border-Orange">Women</li>
+            <li class="leading-9 text-sm text-Very-dark-blue font-[700] tracking-wide pl-10 cursor-pointer hover:border-l-2 hover:border-Orange active:border-l-2 active:border-Orange">About</li>
+            <li class="leading-9 text-sm text-Very-dark-blue font-[700] tracking-wide pl-10 cursor-pointer hover:border-l-2 hover:border-Orange active:border-l-2 active:border-Orange">Contact</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <script src="./script.js"></script>
   </body>
 </html>
